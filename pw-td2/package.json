@@ -2,13 +2,21 @@
   "name": "pw-td2",
   "module": "src",
   "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun run --watch src/index.ts"
   },
-  "start": "bun run src/index.ts",
-  "dev": "bun run --watch src/index.ts",
-  
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/uuid": "^10.0.0",
+    "@types/validator": "^13.12.2"
+  },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/uuid": "^10.0.0",
+    "uuid": "^10.0.0",
+    "validator": "^13.12.0"
   }
 }

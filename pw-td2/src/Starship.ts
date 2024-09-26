@@ -1,17 +1,27 @@
-import {v4 as uuidv4} from "./uuid";
-import validator from "./validator";
+import { v4 as uuidv4 } from "uuid";
+import validator from "validator";
+
 
 
 export class Starship {
+    public id : string ;
     public ref: string;
     public speed: number;
     public status: starshipStatus = starshipStatus.PARKED;
 
-    constructor(ref: string, speed: number) {
+    constructor(ref: string, speed: number, id?: string) {
         this.ref = ref;
         this.speed = speed;
+        if (id) {
+            if (validator.isUUID(id, 4)) {
+            this.id = id;
+            } else {
+            throw new Error("Invalid UUID");
+            }
+        } else {
+            this.id = uuidv4();
+        }
     }
-
 }
 
 export enum starshipStatus {
@@ -56,4 +66,5 @@ export function fly(starship: Starship): void {
         throw new Error("Starship is not taking off");
     }
 }
+
 
