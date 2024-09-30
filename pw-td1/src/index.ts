@@ -23,7 +23,7 @@ const johnDoe: Human = {
 import { helloHuman } from './hello-funcs';
 try {
     console.log(helloHuman(johnDoe));
-    console.log(helloHuman({ firstname: "Jane" })); // Argument incorrect
+    console.log(helloHuman({ firstname: "John" })); // Argument incorrect
 } catch (error) {
     console.error();
 }
