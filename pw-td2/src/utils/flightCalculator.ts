@@ -1,6 +1,6 @@
 
-import { Planet } from "./index.ts";
-import { Starship } from "./Starship";
+import { type Planet } from "../index";
+import { Starship } from "../Starship";
 
 export function calculateFlightDurationFromEarth(planet: Planet, starship: Starship, unity: string = "hours"): number {
     let distance = planet.distanceFromEarth;
