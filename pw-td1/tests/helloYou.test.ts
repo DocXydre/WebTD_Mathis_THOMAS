@@ -10,15 +10,15 @@ test('helloYou renvoie un message de salutation pour un nom valide', () => {
 
 // Test de la fonction helloYou avec un nombre
 test('helloYou renvoie une erreur si le nom nest pas une chaîne de caractères', () => {
-    expect(() => helloYou(123)).toThrow("Error: Invalid name provided.");
+    expect(helloYou(123)).toBe("Error: Invalid name provided.");
 });
 
 // Test de la fonction helloYou avec un nom vide
 test('helloYou renvoie une erreur si le nom est vide', () => {
-    expect(() => helloYou("")).toThrow("Error: Invalid name provided.");
+    expect(helloYou("")).toBe("Error: Invalid name provided.");
 });
 
 // Test de la fonction helloYou sans nom
 test('helloYou renvoie une erreur si aucun nom nest fourni', () => {
-    expect(() => helloYou()).toThrow("Error: Invalid name provided.");
+    expect(helloYou()).toBe("Error: Invalid name provided.");
 });
